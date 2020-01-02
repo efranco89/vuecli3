@@ -1,6 +1,6 @@
 <template >
   <div>
-    <plan v-for="pla in planes" :nombre="pla" :key="pla"/>
+    <plan v-for="pla in planes" :nombre="pla" :key="pla" @select="planSeleccionado"/>
   </div>
 </template>
 
@@ -19,7 +19,13 @@
           'Plan 2 - Intermedio',
           'Plan 3 - Avanzado',
           'Plan 4 - Hackers'
-        ]
+        ],
+        planSelect: null
+      }
+    },
+    methods: {
+      planSeleccionado(plan){
+        this.planSelect = plan;
       }
     }
   }

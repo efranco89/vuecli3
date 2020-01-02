@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="plan">
+    <div @click="seleccionar" class="plan" :class="{'plan-activo':seleccionado}">
       <div class="descripcion">
         <span class='titulo'>{{nombre}}</span>
       </div>
@@ -18,8 +18,18 @@
         type:String,
         default: 'Plan 1 - principiante',
         required: true
-      },
-      precio: Number
+      }
+    },
+    data(){
+      return {
+        seleccionado: false
+      }
+    },
+    methods: {
+      seleccionar(){
+        this.$emit('select', this.nombre)
+        this.seleccionado = true;
+      }
     }
   }
 
