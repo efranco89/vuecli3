@@ -27,13 +27,15 @@
           <div class="descripcion">
             <span class='titulo'>Plan 3 - Avanzado</span>
           </div>
-        </div> -->
+        </div>
         <plan nombre="Plan 1 - Principiantes"/>
         <plan nombre="Plan 2 - Intermedio"/>
         <plan nombre="Plan 3 - Avanzado"/>
         <plan nombre="Plan 4 - Hackers"/>
         <plan/>
+                    -->
 
+        <plan v-for="pla in planes" :nombre="pla" :key="pla"/>
 
 
       </div>
@@ -50,6 +52,16 @@
     components: {
       Contador,
       Plan
+    },
+    data(){
+      return {
+        planes: [
+          'Plan 1 - Principiantes',
+          'Plan 2 - Intermedio',
+          'Plan 3 - Avanzado',
+          'Plan 4 - Hackers'
+        ]
+      }
     }
   }
 </script>
